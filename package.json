@@ -1,7 +1,7 @@
 {
   "name": "th-timestamp-microservice",
   "version": "0.0.1",
-  "name": "app.js",
+  "name": "index.js",
   "dependencies": {
     "body-parser": "1.15.2",
     "express": "3.0.0",
@@ -14,4 +14,4 @@
     "node": "0.8.x",
     "npm": "1.1.x"
   }
-}
+} 
