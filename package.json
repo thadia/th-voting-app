@@ -4,7 +4,7 @@
   "name": "index.js",
   "dependencies": {
     "body-parser": "1.15.2",
-    "express": "3.0.0",
+    "express": "4.10.5",
     "moment": "2.10.6"
   },
   "scripts": {
