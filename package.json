@@ -1,10 +1,15 @@
 {
-  "name": "jsphelloworld",
+  "name": "th-timestamp-microservice",
   "version": "0.0.1",
+  "name": "app.js",
   "dependencies": {
     "body-parser": "1.15.2",
-    "express": "3.0.0"
+    "express": "3.0.0",
+    "moment": "2.10.6"
   },
+  "scripts": {
+    "start": "node index.js"
+  }
   "engines": {
     "node": "0.8.x",
     "npm": "1.1.x"
