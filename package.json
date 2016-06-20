@@ -1,17 +1,16 @@
 {
-  "name": "th-timestamp-microservice",
-  "version": "0.0.1",
   "name": "index.js",
+  "version": "0.0.1",
   "dependencies": {
     "body-parser": "1.15.2",
     "express": "4.10.5",
-    "moment": "2.10.6"
+    "moment": "^2.10.6"
   },
   "scripts": {
     "start": "node index.js"
   },
   "engines": {
-    "node": "0.8.x",
+    "node": "0.10.x",
     "npm": "1.1.x"
   }
-} 
+}
