@@ -1,1 +1,2 @@
-web: mongod --smallfiles; node index.js
+web: mongod --smallfiles
+web: node index.js
