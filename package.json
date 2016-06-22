@@ -12,7 +12,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "start": "mongod --smallfiles"
   },
   "engines": {
     "node": "0.10.x",
