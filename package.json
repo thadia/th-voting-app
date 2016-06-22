@@ -11,7 +11,7 @@
     "shrink": "0.0.3"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.js"
   },
   "engines": {
     "node": "0.10.x",
