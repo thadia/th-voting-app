@@ -1,0 +1,34 @@
+{
+  "name": "ko.plus",
+  "main": [
+    "dist/ko.plus.css",
+    "dist/ko.plus.js"
+  ],
+  "dependencies": {
+    "jquery": ">=1.9.1",
+    "knockoutjs": ">=3.0.0"
+  },
+  "ignore": [
+    "**/.*",
+    "nuget",
+    "Scripts",
+    "Tests",
+    ".travis.yml",
+    "gruntfile.js",
+    "ko.plus.sln",
+    "package.json",
+    "packages.config",
+    "*.md"
+  ],
+  "homepage": "https://github.com/stevegreatrex/ko.plus",
+  "_release": "e39e5a4c48",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e39e5a4c482207d4fb94322642489695c4737540"
+  },
+  "_source": "https://github.com/stevegreatrex/ko.plus.git",
+  "_target": "*",
+  "_originalSource": "ko.plus",
+  "_direct": true
+}
