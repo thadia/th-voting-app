@@ -15,13 +15,12 @@
     "shrink": "0.0.3"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "bower install"
   },
   "engines": {
     "node": "0.10.x",
     "npm": "3.9.6"
   },
-  "scripts": {
-    "postinstall": "bower install"
-  }
+}
 }
