@@ -9,17 +9,14 @@
     
 </head>
 
-<body >
+<body onload="getList()">
     
 <div class="container" ng-controller="voteController">
     <h1 class="header">Pools List</h1>
+    <p id="demo"></p>
     
-    
-   
 </div>
     
-    
- 
 <div class="container" ng-controller="voteController">
     <h1 class="header">Favourite Cars</h1>
     <p>I'm voting for:</p>
@@ -33,6 +30,11 @@
    
 </div>
  
+
+<script>
+    document.getElementById("demo").innerHTML=poll_list;
+    
+</script>
 
 </body>
 </html>
