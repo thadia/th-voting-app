@@ -8,11 +8,8 @@ var AppViewModel = function() { //firstName
         return $.getJSON("/polls/all");
     }).done(function(items) {
         //...and update the todoItems collection when the call returns
-        var newItems = [];
-        for (var i=0; i < items.length; i++ ){
-            newItems.push(new AppViewModel(items[i].title));
-        }
-        self.todoItems(newItems);
+       
+        self.todoItems(items);
     });
     //refresh immediately to load initial data
     this.refresh();
