@@ -10,7 +10,7 @@ var AppViewModel = function() { //firstName
         //...and update the todoItems collection when the call returns
         var newItems = [];
         for (var i=0; i < items.length; i++ ){
-            newItems.push(new AppViewModel(items[i]));
+            newItems.push(new AppViewModel(items[i].title));
         }
         self.todoItems(newItems);
     });
