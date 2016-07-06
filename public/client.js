@@ -1,8 +1,15 @@
-// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
-function AppViewModel() {
-    this.firstName = "Bert";
-    this.lastName = "Bertington";
-}
+module.exports = { 
+    AppViewModel: function(){
+     try{
+          this.firstName = "Bert";
+          this.lastName = "Bertington";
+      }
+     catch(err){
+        return false;
+       
+     }  
+    }
+};
 
 // Activates knockout.js
 ko.applyBindings(new AppViewModel());
