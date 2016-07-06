@@ -4,6 +4,7 @@
   "dependencies": {
     "bing.search": "1.0.1",
     "body-parser": "1.15.2",
+    "bower": "^1.7.9",
     "express": "4.10.5",
     "knockout": "^3.4.0",
     "moment": "2.10.6",
@@ -23,4 +24,3 @@
     "npm": "3.9.6"
   }
 }
-
