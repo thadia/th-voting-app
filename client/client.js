@@ -1,6 +1,7 @@
  
 function AppViewModel() {
-    this.firstName = latest_data
+   
+     this.firstName= $.getJSON("/polls/all");
     
 }
 
