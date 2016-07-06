@@ -6,7 +6,7 @@ function AppViewModel() {
      
      
     $.getJSON( "/polls/all", function( data ) {
-        this.firstName=data.stringify();
+        this.firstName=data;
       });
     
 }
