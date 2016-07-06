@@ -1,6 +1,6 @@
  
 function AppViewModel() {
-    this.firstName = poll_list;
+    this.firstName = latest_data
     
 }
 
