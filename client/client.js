@@ -1,7 +1,7 @@
  
 function AppViewModel() {
    
-     this.firstName= $.getJSON("/polls/all");
+     this.firstName= $.getJSON("/polls/all").stringify();
     
 }
 
