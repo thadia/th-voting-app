@@ -6,6 +6,7 @@ function PollSchemaObject(title, list) {
 
 var PollViewModel = function() { //firstName
     var self = this;
+    
     this.todoItems = ko.observableArray();
   
     this.refresh = ko.command(function() {
@@ -14,10 +15,10 @@ var PollViewModel = function() { //firstName
     }).done(function(items) {
         //...and update the todoItems collection when the call returns
        for (var i=0; i < items.length; i++ ){
-            var newPoll = [items[i].title , items[i].list];
+            var newPoll = [];
+            newPoll = [items[i].title , items[i].list];
             var poolList = [];
             poolList.push(newPoll);
-            //newItems.push(new TodoViewModel(items[i].title , items[i].list));
         }
          self.todoItems(poolList);
      });
