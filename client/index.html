@@ -14,6 +14,20 @@
 <div class="container" ng-controller="voteController">
     <h1 class="header">Pools List</h1>
 
+   <div class="container" ng-repeat="poll in polls">
+       <h1 class="header">{{ poll.title }}</h1>
+       <p>I'm voting for:</p>
+       <select ng-repeat="type in poll.list">
+            <option value="{{ type }}">{{ type }}</option>
+            
+      </select> 
+      <button function="vote()">Vote</button>
+   
+   </div>
+
+   <p>-------------------</p>
+   
+   
     <table>
      <tr ng-repeat="poll in polls">
           <td>{{ poll.title }}</td>
