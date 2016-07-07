@@ -1,5 +1,10 @@
+function PollSchemaObject(title, list) {
+    var self = this;
+    self.title = title;
+    self.list = ko.observable(list);
+}
 
-var AppViewModel = function() { //firstName
+var PollViewModel = function() { //firstName
     var self = this;
     this.todoItems = ko.observableArray();
   
@@ -9,17 +14,19 @@ var AppViewModel = function() { //firstName
     }).done(function(items) {
         //...and update the todoItems collection when the call returns
        for (var i=0; i < items.length; i++ ){
-            var newItems = [items[i].title , items[i].list];
+            var newPoll = [items[i].title , items[i].list];
+            var poolList = [];
+            poolList.push(newPoll);
             //newItems.push(new TodoViewModel(items[i].title , items[i].list));
         }
-         self.todoItems(newItems);
+         self.todoItems(poolList);
      });
     //refresh immediately to load initial data
     this.refresh();
 };
 
 // Activates knockout.js
-ko.applyBindings(new AppViewModel());
+ko.applyBindings(new PollViewModel());
 
  
 
