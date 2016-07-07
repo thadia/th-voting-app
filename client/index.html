@@ -13,15 +13,11 @@
     
 <div class="container" ng-controller="voteController">
     <h1 class="header">Pools List</h1>
-    
-    <ul >
-        <li  > {{ myWelcome }} </li>
-    </ul>
-    
+
     <table>
-     <tr ng-repeat="x in names">
-          <td>{{ x.title }}</td>
-          <td>{{ x.list }}</td>
+     <tr ng-repeat="poll in polls">
+          <td>{{ poll.title }}</td>
+          <td>{{ poll.list }}</td>
      </tr>
    </table>
     
