@@ -18,7 +18,7 @@
        <h1 class="header">{{ poll.title }}</h1>
        <p>I'm voting for:</p>
        <select >
-            <option ng-repeat="type in poll.list" value="{{ type }}">{{ type }}</option>
+            <option ng-repeat="type in poll.list" value="{{ type.item }}">{{ type }}</option>
             
       </select> 
       <button function="vote()">Vote</button>
