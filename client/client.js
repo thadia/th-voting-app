@@ -12,6 +12,6 @@ myApp.controller('voteController', function($scope, $http) {
 myApp.controller('voteController', function($scope, $http) {
      $http.get("/polls/all")
     .then(function (response) {
-        $scope.names = response.data.records;});
+        $scope.names = response.data;});
 }); 
 
