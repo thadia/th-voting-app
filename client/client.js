@@ -9,7 +9,7 @@ var AppViewModel = function() { //firstName
     }).done(function(items) {
         //...and update the todoItems collection when the call returns
        
-        self.todoItems(items);
+        self.todoItems(items[0].title);
     });
     //refresh immediately to load initial data
     this.refresh();
