@@ -14,13 +14,8 @@ var PollViewModel = function() { //firstName
         return $.getJSON("/polls/all");
     }).done(function(items) {
         //...and update the todoItems collection when the call returns
-       for (var i=0; i < items.length; i++ ){
-            var newPoll = [];
-            newPoll = [items[i].title , items[i].list];
-            var poolList = [];
-            poolList.push(newPoll);
-        }
-         self.todoItems(poolList);
+       console.log("Items:  "+items);
+       self.todoItems(items);
      });
     //refresh immediately to load initial data
     this.refresh();
