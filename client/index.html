@@ -16,12 +16,16 @@
 
    <div class="container" ng-repeat="poll in polls">
        <h1 class="header">{{ poll.title }}</h1>
-       <p>I'm voting for:</p>
-       <select >
-            <option ng-repeat="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>
-            
-      </select> 
-      <button function="vote()">Vote</button>
+       <tr>
+          
+          <th></th><p>I'm voting for:</p></th>
+             <th>
+                <select >
+                  <option ng-repeat="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>
+                </select> 
+         </th>
+         <button function="vote()">Vote</button>
+       <tr>   
    
    </div>
 
