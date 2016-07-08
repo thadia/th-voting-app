@@ -12,22 +12,26 @@
 <body ng-app="myApp">
     
 <div class="container" ng-controller="voteController">
-    <h1 class="header">Pools List</h1>
-
-   <div class="container" ng-repeat="poll in polls">
-       <h1 class="header">{{ poll.title }}</h1>
-       <tr>
-          
-          <th></th><p>I'm voting for:</p></th>
-             <th>
-                <select >
-                   <th><option ng-repeat="type in poll.list" value="{{ type.item }}">{{ type.item }}</option></th>
-                </select> 
-         </th>
-         <button function="vote()">Vote</button>
-       <tr>   
+   <h1 class="header">Pools List</h1>
    
-   </div>
+    
+       
+            <div class="container" ng-repeat="poll in polls">
+               
+               <form class="form-inline">
+                   <h1 id="poolTitle">/h1>{{ poll.title }}</h1> 
+                   <label for="text">I'm voting for:</label> 
+                       
+                         <select >
+                            <th><option ng-repeat="type in poll.list" value="{{ type.item }}">{{ type.item }}</option> 
+                         </select> 
+                   
+                  <button function="vote()">Vote</button>
+                </form>    
+            
+            </div>
+      
+  
 
    <p>-------------------</p>
    
