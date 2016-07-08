@@ -30,25 +30,14 @@
    
     <table>
      <tr ng-repeat="poll in polls">
-          <td>{{ poll.title }}</td>
-          <td ng-repeat="type in poll.list">{{ type }}</td>
+          <th>{{ poll.title }}</th>
+          <th ng-repeat="type in poll.list">{{ type }}</th>
      </tr>
    </table>
     
 </div>
     
-<div class="container" >
-    <h1 class="header">Favourite Cars</h1>
-    <p>I'm voting for:</p>
-    <select>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-   </select> 
-   <button function="vote()">Vote</button>
-   
-</div>
+
 </body>
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
