@@ -13,8 +13,6 @@
     
 <div class="container" ng-controller="voteController">
    <h1 class="header">Pools List</h1>
-   
-    
        
             <div class="container" ng-repeat="poll in polls">
                
@@ -28,24 +26,19 @@
                    
                   <button function="vote()">Vote</button>
                 </form>    
-            
             </div>
       
-  
-
    <p>-------------------</p>
-   
    
     <table>
      <tr ng-repeat="poll in polls">
-          <th>{{ poll.title }}</th>
-          <th ng-repeat="type in poll.list">{{ type }}</th>
+          <th>{{ poll  }}</th>
+          
      </tr>
    </table>
     
 </div>
     
-
 </body>
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
