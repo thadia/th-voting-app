@@ -11,7 +11,7 @@
 
 <body ng-app="myApp">
     
-<div class="container" ng-controller="voteController">
+<div class="container" ng-controller="mainController" >
    <h1 class="header">Pools List</h1>
        
             <div class="container" ng-repeat="poll in polls">
@@ -20,7 +20,7 @@
                    <h3 id="poolTitle" class="header">{{ poll.title }}</h3> 
                    <label for="text">I'm voting for:</label> 
                        
-                         <select >
+                         <select ng-change="showSelectValue(mySelect)">
                             <th><option ng-repeat="type in poll.list" value="{{ type.item }}">{{ type.item }}</option> 
                          </select> 
                    
@@ -29,7 +29,9 @@
             </div>
       
    <p>-------------------</p>
+    <h1 class="header">{{mySelect}}</h1>
    
+
     <table>
      <tr ng-repeat="poll in polls">
           <th>{{ poll  }}</th>
