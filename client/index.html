@@ -13,6 +13,7 @@
     
 <div class="container" ng-controller="mainController" >
    <h1 class="header">Pools List</h1>
+    <h1>Currently selected: {{selectedName}} </h1>
        
             <div class="container" ng-repeat="poll in polls">
                
@@ -29,7 +30,7 @@
             </div>
       
    <p>-------------------</p>
-     <h1>Currently selected: {{ selectedName  }} </h1>
+    
          
     <table>
      <tr ng-repeat="poll in polls">
