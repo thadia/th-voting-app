@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp',[]);
+var myApp = angular2.module('myApp',[]);
 
 myApp.controller('mainController', function($scope, $http) {
      $http.get("/polls/all")
