@@ -20,7 +20,7 @@
                    <h3 id="poolTitle" class="header">{{ poll.title }}</h3> 
                    <label for="text">I'm voting for:</label> 
                        
-                         <select ng-change="showSelectValue(mySelect)">
+                         <select >
                             <th><option ng-repeat="type in poll.list" value="{{ type.item }}">{{ type.item }}</option> 
                          </select> 
                    
@@ -29,8 +29,7 @@
             </div>
       
    <p>-------------------</p>
-    <h1 class="header">{{mySelect}}</h1>
-   
+    
 
     <table>
      <tr ng-repeat="poll in polls">
