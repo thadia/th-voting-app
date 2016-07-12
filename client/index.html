@@ -13,7 +13,7 @@
     
 <div class="container" ng-controller="mainController" >
    <h1 class="header">Pools List</h1>
-    <h1>Currently selected: {{selectedName}} </h1>
+   
        
             <div class="container" ng-repeat="poll in polls">
                
@@ -26,6 +26,8 @@
                          </select> 
                    
                   <button function="vote()">Vote</button>
+                  <h1>Currently selected: {{selectedName.item}} </h1>
+                  
                 </form>    
             </div>
       
