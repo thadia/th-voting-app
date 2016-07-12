@@ -11,17 +11,17 @@
 
 <body ng-app="myApp">
     
-<div class="container"  ng-model="selectedName" ng-controller="mainController" >
+<div class="container"   ng-controller="mainController" >
    <h1 class="header">Pools List</h1>
        
-            <div class="container" ng-options="poll in polls">
+            <div class="container" ng-repeat="poll in polls">
                
                <form class="form-inline">
                    <h3 id="poolTitle" class="header">{{ poll.title }}</h3> 
                    <label for="text">I'm voting for:</label> 
                        
-                         <select >
-                            <th><option ng-model="selectedName" ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option> 
+                         <select ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}>
+                     <!--       <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>  -->
                          </select> 
                    
                   <button function="vote()">Vote</button>
@@ -43,7 +43,7 @@
 </body>
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/angular2-build/angular2.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
     <script src="/client/client.js"></script>
 
 </html>
