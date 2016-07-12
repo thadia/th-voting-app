@@ -11,7 +11,7 @@
 
 <body ng-app="myApp">
     
-<div class="container" ng-controller="mainController" >
+<div class="container"  ng-model="selectedName" ng-controller="mainController" >
    <h1 class="header">Pools List</h1>
        
             <div class="container" ng-options="poll in polls">
@@ -21,7 +21,7 @@
                    <label for="text">I'm voting for:</label> 
                        
                          <select >
-                            <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option> 
+                            <th><option ng-model="selectedName" ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option> 
                          </select> 
                    
                   <button function="vote()">Vote</button>
