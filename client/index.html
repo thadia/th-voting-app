@@ -21,7 +21,7 @@
                    <label for="text">I'm voting for:</label> 
                        
                          <select >
-                            <th><option ng-repeat="type in poll.list" value="{{ type.item }}">{{ type.item }}</option> 
+                            <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option> 
                          </select> 
                    
                   <button function="vote()">Vote</button>
