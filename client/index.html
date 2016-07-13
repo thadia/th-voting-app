@@ -21,7 +21,7 @@
                    <h3 id="poolTitle" class="header">{{ poll.title }}</h3> 
                    <label for="text">I'm voting for:</label> 
                        
-                         <select ng-model="selectedName" ng-options="type as type.item for type in poll.list"  > 
+                         <select ng-model="selectedName.item" ng-options="type as type.item for type in poll.list"  > 
                      <!--       <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>  -->
                          </select> 
                    
