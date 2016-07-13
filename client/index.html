@@ -25,7 +25,7 @@
                      <!--       <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>  -->
                          </select> 
                    
-                  <button function="vote()">Vote</button>
+                  <button ng-click="vote()">Vote</button>
                   <h1>Currently selected: {{selectedName.item}} </h1>
                   
                 </form>    
