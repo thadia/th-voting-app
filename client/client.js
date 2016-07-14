@@ -10,7 +10,7 @@ myApp.controller('mainController', function($scope, $http) {
 
      $scope.vote = function() {
          //voting call here
-         $scope.selectedName.item ={};
+         $scope.selectedName ={};
          $scope.string_API = "/polls/vote/:user/:poolName/:" + $scope.selectedName.item;
          console.log("LOG: "+ $scope.selectedName.item);
          
