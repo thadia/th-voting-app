@@ -18,7 +18,8 @@ myApp.controller('mainController', function($scope, $http) {
          console.log("LOG: "+ $scope.string_API);
     
          $http.get($scope.string_API)  //string 
-        .then(function () {
+        .then(function (response) {
+             $scope.polls = response.data;
              $scope.alertVoted = "You voted for: " + $scope.selectedName;
             
         }); 
