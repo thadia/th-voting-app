@@ -19,7 +19,6 @@ myApp.controller('mainController', function($scope, $http) {
     
          $http.get($scope.string_API)  //string 
         .then(function (response) {
-             $scope.polls = response.data;
              $scope.alertVoted = "You voted for: " + $scope.selectedName;
             
         }); 
