@@ -12,7 +12,9 @@
 <body ng-app="myApp">
     
 <div class="container" ng-controller="mainController" >
-   <h1 class="header">Pools List</h1>
+   <div class="form-inline">
+       <h1 class="header">Pools List</h1>  <button ng-click="newPoll(poolName,items)">Add New Poll</button>
+   </div>
    <h3 class="voted">{{alertVoted}}</h3>
        
             <div class="container" ng-repeat="poll in polls">

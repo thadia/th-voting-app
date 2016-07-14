@@ -29,6 +29,22 @@ myApp.controller('mainController', function($scope, $http) {
              $scope.alertVoted = "You voted for: " + $scope.selectedName;
         }); 
     };
+      
+     $scope.newPoll = function(poll, itemName, slectedItemObj) {
+         //voting call here
+         $scope.selectedName = slectedItemObj;
+         $scope.selectedName.item = itemName;
+         $scope.poll = poll;
+         $scope.user = "guest";
+         $scope.string_API = "/polls/vote/" +$scope.user+ "/"+$scope.poll.title+"/" +$scope.selectedName;
+         console.log("LOG: "+ $scope.string_API);
+    
+         $http.get($scope.string_API)  //string 
+        .then(function (response) {
+             $scope.getAll();
+             $scope.alertVoted = "You voted for: " + $scope.selectedName;
+        }); 
+    }; 
        
 }); 
 
