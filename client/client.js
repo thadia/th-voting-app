@@ -16,12 +16,12 @@ myApp.controller('mainController', function($scope, $http) {
          $scope.user = "guest";
          $scope.string_API = "/polls/vote/:" +$scope.user+ "/:"+$scope.poll.title+"/:" +$scope.selectedName;
          console.log("LOG: "+ $scope.string_API);
-         
-         
-    /*     
-         $http.get("/polls/vote/:user/:poolName/:itemType")  //string 
-        .then(function (response) {
-             $scope.polls = response.data;}); */
+    
+         $http.get($scope.string_API)  //string 
+        .then(function () {
+             $scope.alertVoted = "You voted for: " + $scope.selectedName;
+            
+        }); 
           
          
          
