@@ -6,8 +6,14 @@ myApp.controller('mainController', function($scope, $http) {
         $scope.polls = response.data;
         
     });
-        
-
+      
+      
+     $scope.getAll = function(){
+          $http.get("/polls/all")
+            .then(function (response) {
+            $scope.polls = response.data;
+        });
+     } 
      $scope.vote = function(poll, itemName, slectedItemObj) {
          //voting call here
          $scope.selectedName = slectedItemObj;
@@ -19,12 +25,9 @@ myApp.controller('mainController', function($scope, $http) {
     
          $http.get($scope.string_API)  //string 
         .then(function (response) {
+             $scope.getAll();
              $scope.alertVoted = "You voted for: " + $scope.selectedName;
-            
         }); 
-          
-         
-         
     };
        
 }); 
