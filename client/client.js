@@ -33,9 +33,9 @@ myApp.controller('mainController', function($scope, $http) {
    //  $scope.newPoll = function(owner, pollName, items ) {
      $scope.newPoll = function(owner, pollName, items ) {
          // polls/post/:user/:title/:list
-         $scope.owner = "own1";
-         $scope.pollName = "colors";
-         $scope.items = "blue,yellow,black";
+         $scope.owner = owner;
+         $scope.pollName = pollName;
+         $scope.items = items;
          $scope.string_API = "/polls/post/" +$scope.owner+ "/"+$scope.pollName+"/" +$scope.items;
          console.log("LOG New Poll: "+ $scope.string_API);
     
