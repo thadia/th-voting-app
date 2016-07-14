@@ -13,7 +13,7 @@ myApp.controller('mainController', function($scope, $http) {
          $scope.selectedName ={};
          $scope.poll = {};
          $scope.user = "guest";
-         $scope.string_API = "/polls/vote/:" +$scope.user+ "/:"+$scope.poll.title+"/:" +$scope.selectedName.item;
+         $scope.string_API = "/polls/vote/:" +$scope.user+ "/:"+$scope.poll.title+"/:" +$scope.selectedName;
          console.log("LOG: "+ $scope.string_API);
          
          

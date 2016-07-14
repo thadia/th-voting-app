@@ -18,7 +18,7 @@
             <div class="container" ng-repeat="poll in polls">
                
                <form class="form-inline">
-                   <h3 id="poolTitle" class="header">{{ poll.title }}</h3> 
+                   <h3 id="poolTitle" class="header" ng-model="poll.title">{{ poll.title }}</h3> 
                    <label for="text">I'm voting for:</label> 
                        
                          <select ng-model="selectedName" ng-options="type as type.item for type in poll.list"  > 
