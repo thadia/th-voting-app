@@ -21,7 +21,7 @@ myApp.controller('mainController', function($scope, $http) {
          $scope.poll = poll;
          $scope.user = "guest";
          $scope.string_API = "/polls/vote/" +$scope.user+ "/"+$scope.poll.title+"/" +$scope.selectedName;
-         console.log("LOG: "+ $scope.string_API);
+         console.log("LOG Voting: "+ $scope.string_API);
     
          $http.get($scope.string_API)  //string 
         .then(function (response) {
@@ -30,19 +30,18 @@ myApp.controller('mainController', function($scope, $http) {
         }); 
     };
       
-     $scope.newPoll = function(poll, itemName, slectedItemObj) {
-         //voting call here
-         $scope.selectedName = slectedItemObj;
-         $scope.selectedName.item = itemName;
-         $scope.poll = poll;
-         $scope.user = "guest";
-         $scope.string_API = "/polls/vote/" +$scope.user+ "/"+$scope.poll.title+"/" +$scope.selectedName;
-         console.log("LOG: "+ $scope.string_API);
+     $scope.newPoll = function(owner, pollName, items ) {
+         // polls/post/:user/:title/:list
+         $scope.owner = owner;
+         $scope.pollName = pollName;
+         $scope.items = items;
+         $scope.string_API = "/polls/post/" +$scope.owner+ "/"+$scope.pollName+"/" +$scope.items;
+         console.log("LOG New Poll: "+ $scope.string_API);
     
-         $http.get($scope.string_API)  //string 
+         $http.get($scope.string_API)  
         .then(function (response) {
              $scope.getAll();
-             $scope.alertVoted = "You voted for: " + $scope.selectedName;
+             $scope.alertAddedPoll = "Your New Poll was added.";
         }); 
     }; 
        
