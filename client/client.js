@@ -31,12 +31,12 @@ myApp.controller('mainController', function($scope, $http) {
     };
       
    //  $scope.newPoll = function(owner, pollName, items ) {
-     $scope.newPoll = function(owner, pollName, items ) {
+     $scope.newPoll = function(pollName, items ) {
          // polls/post/:user/:title/:list
-         $scope.owner = owner;
+         
          $scope.pollName = pollName;
          $scope.items = items;
-         $scope.string_API = "/polls/post/" +$scope.owner+ "/"+$scope.pollName+"/" +$scope.items;
+         $scope.string_API = "/polls/post/"+$scope.pollName+"/" +$scope.items;
          console.log("LOG New Poll: "+ $scope.string_API);
     
          $http.get($scope.string_API)  
