@@ -19,8 +19,8 @@ myApp.controller('mainController', function($scope, $http) {
          $scope.selectedName = slectedItemObj;
          $scope.selectedName.item = itemName;
          $scope.poll = poll;
-         $scope.user = "guest";
-         $scope.string_API = "/polls/vote/" +$scope.user+ "/"+$scope.poll.title+"/" +$scope.selectedName;
+        // $scope.user = "guest";
+         $scope.string_API = "/polls/vote/" +$scope.poll.title+"/" +$scope.selectedName;
          console.log("LOG Voting: "+ $scope.string_API);
     
          $http.get($scope.string_API)  //string 
