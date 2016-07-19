@@ -49,6 +49,7 @@ myApp.controller('mainController', function($scope, $http) {
 }); 
 
 
+
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
