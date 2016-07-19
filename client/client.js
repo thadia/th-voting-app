@@ -4,16 +4,9 @@ var chart_array = [];
 myApp.controller('mainController', function($scope, $http) {
      $http.get("/polls/all")
     .then(function (response) {
-     //   $scope.polls = response.data;
-        
-        for(var i=0;i<response.data.length;i++){
-            chart_array.push(["Item","Votes"]);
-           for(var j=0;j<$scope.polls.list.length;j++){
-               chart_array.push([response.data.list[j].item,response.data.list[j].count]);
-           }
-           console.log(chart_array + " CHART DATA");
-           //drawChart(chart_array, $scope.polls.title);
-        }
+         console.log( $scope.polls + "MY Obj: ");
+      $scope.polls = response.data;
+       
             // ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  
     });
      
@@ -59,7 +52,7 @@ myApp.controller('mainController', function($scope, $http) {
     
     
     
-    
+/*    
     
     
     google.charts.load('current', {'packages':['corechart']});
@@ -69,6 +62,7 @@ myApp.controller('mainController', function($scope, $http) {
     function drawChart(array_data, title) {
         var data = google.visualization.arrayToDataTable(array_data);
  
+ */
 /*
         var data = google.visualization.arrayToDataTable([
           ['Item', 'Votes'],
@@ -79,6 +73,8 @@ myApp.controller('mainController', function($scope, $http) {
           ['Sleep',    7]
         ]);
 */
+
+/*
         var options = {
           title:  title
         };
@@ -88,7 +84,7 @@ myApp.controller('mainController', function($scope, $http) {
         chart.draw(data, options);
       } 
    
-   
+   */
       
 }); 
 
