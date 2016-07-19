@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" >
+ 
+<head>
+     <meta charset="UTF-8">
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="/client/file.css">
+     <title>Timestamp Microservice</title>
+    
+</head>
+
+<body ng-app="myApp">
+   <a href="/auth/twitter">Sign in with Twitter</a>
+
+   <h3 class="voted">{{alertVoted}}</h3>
+            <div class="container" ng-repeat="poll in polls">
+               <form class="form-inline">
+                   <h3 class="poolTitle" id="poolTitle" class="header" ng-model="poll">{{ poll.title }}</h3> 
+                   <label for="text">I'm voting for:</label> 
+                     <!--    
+                         <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > 
+                         
+                         </select> 
+                      -->
+                </form>    
+            </div>
+
+</div>
+    
+</body>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/client/client.js"></script>
+
+</html>
+
