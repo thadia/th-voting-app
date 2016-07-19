@@ -1,13 +1,22 @@
 var myApp = angular.module('myApp',[]);
+var chart_array = [];
 
 myApp.controller('mainController', function($scope, $http) {
      $http.get("/polls/all")
     .then(function (response) {
-        $scope.polls = response.data;
+     //   $scope.polls = response.data;
         
+        for(var i=0;i<response.data.length;i++){
+            chart_array.push(["Item","Votes"]);
+           for(var j=0;j<$scope.polls.list.length;j++){
+               chart_array.push([response.data.list[j].item,response.data.list[j].count]);
+           }
+           console.log(chart_array + " CHART DATA");
+           //drawChart(chart_array, $scope.polls.title);
+        }
+            // ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  
     });
-      
-      
+     
      $scope.getAll = function(){
           $http.get("/polls/all")
             .then(function (response) {
@@ -45,35 +54,47 @@ myApp.controller('mainController', function($scope, $http) {
              $scope.alertAddedPoll = "Your New Poll was added.";
         }); 
     }; 
-       
-}); 
+    
+    
+    
+    
+    
+    
+    
+    
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
 
 
-
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-
+    function drawChart(array_data, title) {
+        var data = google.visualization.arrayToDataTable(array_data);
+ 
+/*
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
+          ['Item', 'Votes'],
           ['Work',     11],
           ['Eat',      2],
           ['Commute',  2],
           ['Watch TV', 2],
           ['Sleep',    7]
         ]);
-
+*/
         var options = {
-          title: 'My Daily Activities'
+          title:  title
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
-      }
- 
+      } 
    
+   
+      
+}); 
+
+
+
+
  
    
  
