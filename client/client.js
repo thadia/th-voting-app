@@ -4,10 +4,21 @@ var chart_array = [];
 myApp.controller('mainController', function($scope, $http) {
      $http.get("/polls/all")
     .then(function (response) {
-         console.log( $scope.polls + "MY Obj: ");
-      $scope.polls = response.data;
-       
-            // ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  
+         
+         $scope.polls = response.data;
+     //   console.log( $scope.polls[1].title + "  MY Obj: ");
+     //   console.log( $scope.polls[1].list[0].item + "  MY Obj item: ");
+     //   console.log( $scope.polls[1].list[0].count + "  MY Obj count: ");
+         for(var i=0;i<$scope.polls.length;i++){
+             chart_array.push(["Items","Votes"]);
+             for(var j=0;j<$scope.polls[i].list.length;j++){
+                 chart_array.push([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]);
+             }
+             console.log(chart_array + " MY CHART OBJ.");
+             drawChart(chart_array, $scope.polls[1].title);
+             chart_array = [];
+         }
+           
     });
      
      $scope.getAll = function(){
@@ -48,21 +59,15 @@ myApp.controller('mainController', function($scope, $http) {
         }); 
     }; 
     
-    
-    
-    
-    
-/*    
-    
-    
+
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
 
     function drawChart(array_data, title) {
-        var data = google.visualization.arrayToDataTable(array_data);
+        var data = google.visualization.arrayToDataTable([array_data]);
  
- */
+ 
 /*
         var data = google.visualization.arrayToDataTable([
           ['Item', 'Votes'],
@@ -74,17 +79,16 @@ myApp.controller('mainController', function($scope, $http) {
         ]);
 */
 
-/*
+ 
         var options = {
           title:  title
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
         chart.draw(data, options);
       } 
    
-   */
+ 
       
 }); 
 
