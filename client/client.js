@@ -1,22 +1,25 @@
+
 var myApp = angular.module('myApp',[]);
-var chart_array = [];
+
 
 myApp.controller('mainController', function($scope, $http) {
      $http.get("/polls/all")
     .then(function (response) {
+         
+         $scope.chart_array = new Array();
+         $scope.chart_array[0] =['Items','Votes'];
          
          $scope.polls = response.data;
      //   console.log( $scope.polls[1].title + "  MY Obj: ");
      //   console.log( $scope.polls[1].list[0].item + "  MY Obj item: ");
      //   console.log( $scope.polls[1].list[0].count + "  MY Obj count: ");
          for(var i=0;i<$scope.polls.length;i++){
-             chart_array.push(Array.from(['Items','Votes']));
+             //chart_array[0]=['Items','Votes'];
              for(var j=0;j<$scope.polls[i].list.length;j++){
-                 chart_array.push(Array.from([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]));
+                 $scope.chart_array.push(Array.from([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]));
              }
-             console.log(chart_array + " MY CHART OBJ.");
-             drawChart(chart_array, $scope.polls[1].title);
-             chart_array = [];
+             console.log($scope.chart_array + " MY CHART OBJ.");
+             drawChart($scope.chart_array, $scope.polls[1].title);
          }
            
     });
@@ -60,12 +63,13 @@ myApp.controller('mainController', function($scope, $http) {
     }; 
     
 
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
+     google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawChart);
 
 
-    function drawChart(array_data, title) {
-        var data = google.visualization.arrayToDataTable([array_data]);
+      function drawChart(array_data, title) {
+         console.log(array_data[1][0] + " DATA " + array_data[1][1]);
+        var data = google.visualization.arrayToDataTable(array_data,false);
  
  
 /*
@@ -86,10 +90,12 @@ myApp.controller('mainController', function($scope, $http) {
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         chart.draw(data, options);
-      } 
+        
+        
+       } 
    
- 
-      
+   
+          
 }); 
 
 
