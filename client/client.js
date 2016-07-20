@@ -87,7 +87,7 @@ myApp.controller('mainController', function($scope, $http) {
           title:  item_title
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById(item_title));
+        var chart = new google.visualization.PieChart(document.getElementById('pie'));
         chart.draw(data, options);
         
         
