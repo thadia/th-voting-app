@@ -10,9 +10,9 @@ myApp.controller('mainController', function($scope, $http) {
      //   console.log( $scope.polls[1].list[0].item + "  MY Obj item: ");
      //   console.log( $scope.polls[1].list[0].count + "  MY Obj count: ");
          for(var i=0;i<$scope.polls.length;i++){
-             chart_array.push(["Items","Votes"]);
+             chart_array.push(Array.from(['Items','Votes']));
              for(var j=0;j<$scope.polls[i].list.length;j++){
-                 chart_array.push([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]);
+                 chart_array.push(Array.from([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]));
              }
              console.log(chart_array + " MY CHART OBJ.");
              drawChart(chart_array, $scope.polls[1].title);
