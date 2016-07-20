@@ -7,19 +7,20 @@ myApp.controller('mainController', function($scope, $http) {
     .then(function (response) {
          
          $scope.polls = response.data;
-         var chart_array = new Array();
+         $scope.chart_array = new Array();
      //   console.log( $scope.polls[1].title + "  MY Obj: ");
      //   console.log( $scope.polls[1].list[0].item + "  MY Obj item: ");
      //   console.log( $scope.polls[1].list[0].count + "  MY Obj count: ");
          for(var i=0;i<$scope.polls.length;i++){
               
-             chart_array[0] =['Items','Votes'];
+             $scope.chart_array[0] =['Items','Votes'];
              for(var j=0;j<$scope.polls[i].list.length;j++){
-                 chart_array.push(Array.from([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]));
+                 $scope.chart_array.push(Array.from([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]));
              }
-             console.log(chart_array + " MY CHART OBJ.");
-             //drawChart(chart_array, $scope.polls[1].title);
-             //$scope.chart_array.length = 0;
+             console.log($scope.chart_array + " MY CHART OBJ.");
+             drawChart($scope.chart_array, $scope.polls[1].title);
+             
+              //$scope.chart_array.length = 0;
          }
            
     });
@@ -62,16 +63,14 @@ myApp.controller('mainController', function($scope, $http) {
         }); 
     }; 
     
-
-     google.charts.load('current', {'packages':['corechart']});
-     google.charts.setOnLoadCallback(drawChart);
+      google.charts.load('current', {'packages':['corechart']});
+    
 
 
       function drawChart(array_data, item_title) {
-         console.log(array_data[1][0] + " DATA " + array_data[1][1]);
-         var data = google.visualization.arrayToDataTable(array_data,false);
- 
- 
+         if(array_data){
+             console.log(array_data[1][0] + " DATA " + array_data[1][1]);
+             var data = google.visualization.arrayToDataTable(array_data,false);
 /*
         var data = google.visualization.arrayToDataTable([
           ['Item', 'Votes'],
@@ -83,18 +82,20 @@ myApp.controller('mainController', function($scope, $http) {
         ]);
 */
 
- 
-        var options = {
-          title:  item_title
-        };
+              var options = {
+                title:  item_title
+              };
 
-        var chart = new google.visualization.PieChart(document.getElementById(item_title));
-        chart.draw(data, options);
-        
+              var chart = new google.visualization.PieChart(document.getElementById(item_title));
+              console.log("Container: " + item_title);
+              chart.draw(data, options);
+         }
+         else console.log("Should try later");
         
        } 
    
-   
+       google.charts.setOnLoadCallback(drawChart);
+
           
 }); 
 
