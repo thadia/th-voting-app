@@ -25,9 +25,10 @@
                    <h3 class="poolTitle" id="poolTitle" class="header" ng-model="poll">{{ poll.title }}</h3>
                    <label for="text">I'm voting for:</label>
 
-                         <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  >
-                              <div id="{{ poll.title }}" style="width: 900px; height: 500px;">{{ poll.title }}</div>
-                         </select>
+                        <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > </select>
+                        <span >
+                            <span id="{{ poll.title }}" ng-model="poll">{{ poll.title }}</span>
+                        </span>
 
                 </form>
             </div>
