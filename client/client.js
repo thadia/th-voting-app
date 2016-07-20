@@ -6,21 +6,19 @@ myApp.controller('mainController', function($scope, $http) {
      $http.get("/polls/all")
     .then(function (response) {
          
-         $scope.chart_array = new Array();
-        
-         
          $scope.polls = response.data;
      //   console.log( $scope.polls[1].title + "  MY Obj: ");
      //   console.log( $scope.polls[1].list[0].item + "  MY Obj item: ");
      //   console.log( $scope.polls[1].list[0].count + "  MY Obj count: ");
          for(var i=0;i<$scope.polls.length;i++){
+             $scope.chart_array = new Array();
              $scope.chart_array[0] =['Items','Votes'];
              for(var j=0;j<$scope.polls[i].list.length;j++){
                  $scope.chart_array.push(Array.from([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]));
              }
              console.log($scope.chart_array + " MY CHART OBJ.");
-             drawChart($scope.chart_array, $scope.polls[1].title);
-             $scope.chart_array.length = 0;
+           //  drawChart($scope.chart_array, $scope.polls[1].title);
+             //$scope.chart_array.length = 0;
          }
            
     });
