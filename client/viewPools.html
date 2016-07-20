@@ -15,8 +15,6 @@
    <div class="form-inline">
        <h1 class="header">Pools Results</h1>
        
-       <div id="piechart" style="width: 900px; height: 500px;"></div>
-       
        <form class="form-inline">
 
    <a href="/auth/twitter">Sign in with Twitter</a>
@@ -28,10 +26,7 @@
                    <label for="text">I'm voting for:</label>
 
                          <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  >
-                         
-                         
-
-                         
+                              <div id="{{poll.title}}" style="width: 900px; height: 500px;">{{ poll.title }}</div>
                          </select>
 
                 </form>
