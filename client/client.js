@@ -57,7 +57,40 @@ myApp.controller('mainController', function($scope, $http) {
          $http.get($scope.string_API)  //string 
         .then(function (response) {
             $scope.itemToDraw = response.data;
-            console.log("My Object to Draw "+$scope.itemToDraw  );
+           
+            
+                   var chart1 = {};
+                   chart1.type = "PieChart";
+                   chart1.data = [['Item', 'Votes'],];
+                   for(var i=0;i<$scope.itemToDraw.list.length;i++){
+                       chart1.data.push([$scope.itemToDraw.list[i].item,$scope.itemToDraw.list[i].count]);
+                   }
+                  
+                   chart1.options = {
+                       displayExactValues: true,
+                       width: 400,
+                       height: 200,
+                       is3D: true,
+                       chartArea: {left:10,top:10,bottom:0,height:"100%"}
+                   };
+               
+                   chart1.formatters = {
+                     number : [{
+                       columnNum: 1,
+                       pattern: "$ #,##0.00"
+                     }]
+                   };
+               
+                   $scope.chart = chart1;
+               
+            
+             console.log("My Object to Draw Scope Chart "+ $scope.chart.data);
+            
+            
+            
+            
+            
+            
         }); 
     };   
     
