@@ -1,5 +1,5 @@
 
-var myApp = angular.module('myApp',[]);
+var myApp = angular.module('myApp',['googlechart']);
 
 
 myApp.controller('mainController', function($scope, $http) {
