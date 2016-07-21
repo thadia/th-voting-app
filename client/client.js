@@ -49,9 +49,34 @@ myApp.controller('mainController', function($scope, $http) {
     }; 
     
 
+       $scope.drawChart = function(itemName) {
+
+         $scope.string_API = "/polls/viewChart/" + itemName;
+         console.log("LOG Show drawChart: "+ $scope.string_API);
+    
+         $http.get($scope.string_API)  //string 
+        .then(function (response) {
+            $scope.itemToDraw = response.data;
+            console.log("My Object to Draw "+$scope.itemToDraw  );
+        }); 
+    };   
+    
+    
+    
+}); 
+
+
+
+
+
+/*
+
+
+google.charts.load('current');   // Don't need to specify chart libraries!
+
      $scope.drawChart = function(poll, itemName) {
          
-         google.charts.load('current');   // Don't need to specify chart libraries!
+        
 
          $scope.selectedName.item = itemName;
          $scope.poll = poll;
@@ -65,15 +90,7 @@ myApp.controller('mainController', function($scope, $http) {
             console.log("My Object to Draw "+$scope.itemToDraw  );
         }); 
     };
-    
-    
-    
-    
-}); 
-/*
-
-
-    
+        
     
     
     

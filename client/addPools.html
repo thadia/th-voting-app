@@ -30,11 +30,9 @@
                <form class="form-inline">
                    <h3 class="poolTitle" id="poolTitle" class="header" ng-model="poll">{{ poll.title }}</h3> 
                    <label for="text">I'm voting for:</label> 
-                       
                          <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > 
                               <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>   
                          </select> 
-                   
                   <button ng-click="vote(poll,selectedName,selectedName.item)">Vote</button>
             <!--      <h1>Currently selected: {{poll.title}} Item: {{selectedName.item}} </h1>
                   <h1>Currently selected: {{poll.title}}  {{string_API}} </h1>  -->
