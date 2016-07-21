@@ -26,8 +26,9 @@
                    <label for="text">I'm voting for:</label>
 
                         <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > </select>
-                         
-                        <div id="pie" ></div>
+                             
+                        <button ng-click="drawChart()">Draw</button>
+
                         
 
                 </form>
