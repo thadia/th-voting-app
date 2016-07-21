@@ -6,21 +6,34 @@ myApp.controller('mainController', function($scope, $http) {
      $http.get("/polls/all")
     .then(function (response) {
          
-         $scope.polls = response.data;
-         $scope.chart_array = new Array();
+        $scope.polls = response.data;
+        
+        google.charts.load('current');   // Don't need to specify chart libraries!
+   
+        function drawVisualization(dataTable,Title) {
+            var wrapper = new google.visualization.ChartWrapper({
+              chartType: 'PieChart',
+              dataTable: dataTable,
+              options: {'title': Title},
+              containerId: 'pie'
+            });
+            wrapper.draw();
+          }
+         
+         
+
      //   console.log( $scope.polls[1].title + "  MY Obj: ");
      //   console.log( $scope.polls[1].list[0].item + "  MY Obj item: ");
      //   console.log( $scope.polls[1].list[0].count + "  MY Obj count: ");
          for(var i=0;i<$scope.polls.length;i++){
-              
-             $scope.chart_array[0] =['Items','Votes'];
-             for(var j=0;j<$scope.polls[i].list.length;j++){
-                 $scope.chart_array.push(Array.from([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]));
+                 $scope.dataTable = new google.visualization.DataTable();
+                 $scope.dataTable.addColumn('string', 'Items');
+                 $scope.dataTable.addColumn('number', 'Votes');
+             for(var j=0;j<$scope.polls[i].list.length;j++) {
+                 $scope.dataTable.addRow([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]);
              }
-             console.log($scope.chart_array + " MY CHART OBJ.");
-             drawChart($scope.chart_array, $scope.polls[1].title);
-             
-              //$scope.chart_array.length = 0;
+             console.log($scope.dataTable  + " MY CHART OBJ.");
+             google.charts.setOnLoadCallback(drawVisualization($scope.dataTable,$scope.polls[1].title));
          }
            
     });
@@ -63,38 +76,9 @@ myApp.controller('mainController', function($scope, $http) {
         }); 
     }; 
     
-      google.charts.load('current', {'packages':['corechart']});
+
     
-
-
-      function drawChart(array_data, item_title) {
-         if(array_data){
-             console.log(array_data[1][0] + " DATA " + array_data[1][1]);
-             var data = google.visualization.arrayToDataTable(array_data,false);
-/*
-        var data = google.visualization.arrayToDataTable([
-          ['Item', 'Votes'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
-*/
-
-              var options = {
-                title:  item_title
-              };
-
-              var chart = new google.visualization.PieChart(document.getElementById(item_title));
-              console.log("Container: " + item_title);
-              chart.draw(data, options);
-         }
-         else console.log("Should try later");
-        
-       } 
    
-       google.charts.setOnLoadCallback(drawChart);
 
           
 }); 
