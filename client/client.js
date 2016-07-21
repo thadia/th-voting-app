@@ -7,8 +7,7 @@ myApp.controller('mainController', function($scope, $http) {
     .then(function (response) {
          $scope.polls = response.data;
     });
-    
-     
+
      $scope.getAll = function(){
           $http.get("/polls/all")
             .then(function (response) {
