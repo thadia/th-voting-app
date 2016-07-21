@@ -10,7 +10,7 @@ myApp.controller('mainController', function($scope, $http) {
     
      $http.get("/username")
     .then(function (response) {
-         $scope.username = response.data;
+         $scope.userdata = response.data;
     });
 
      $scope.getAll = function(){
