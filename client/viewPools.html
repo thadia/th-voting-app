@@ -11,25 +11,37 @@
 </head>
 
 <body ng-app="myApp">
-<div class="container" ng-controller="mainController" >
    
-        <form class="form-inline">
-           <label class="control-label" for="header_title"><h1 class="header">Poll Results</h1></label>
+   <div class="container">
+<div class="container-fluid" ng-controller="mainController" >
+   
+    <form class="form-inline">
+           <label class="control-label" for="header_title"><h1 class="header">Poll List</h1></label>
            
-            <a href="/auth/twitter">Sign in with Twitter</a>
+            <a href="/auth/twitter"><button> <img src="/client/signin.png"/></button></a>
         </form>     
-
-   <div google-chart chart="chart" style="border:0px inset black;padding:0;width:400px">   </div>
-
+   
+   <div class="col-sm-3">
+   
             <div class="container" ng-repeat="poll in polls">
                <form class="form-inline">
-                   <label class="control-label" for="poll_name"> <h3 class="poolTitle" id="poolTitle" class="header" ng-model="poll">{{ poll.title }}</h3></label>
-                   <button ng-click="drawChart(poll.title)">See Chart</button>
+                   <label class="control-label" for="poll_name"> <h4 class="pollTitle" id="pollTitle" class="header" ng-model="poll">{{ poll.title }}</h4></label>
+                   <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)">See Chart</button>
 
                 </form>
             </div>
+    </div>
+    
+    
+    <div class="col-sm-9">
+       
+          <div google-chart chart="chart" style="border:0px inset black;padding:0;width:400px">   </div>
 
-</div>
+    
+     </div>
+    
+    
+</div></div>
 
 </body>
 

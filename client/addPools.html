@@ -10,37 +10,48 @@
 </head>
 
 <body ng-app="myApp">
-    
-<div class="container" ng-controller="mainController" >
-   <div class="form-inline">
-       <h1 class="header">Pools List</h1>  
-       <form class="form-inline">
-            <!-- //add new poll form here  --> 
-          <!-- User Name: <input type="text" ng-model="owner">  --> 
-           Poll Title: <input type="text" ng-model="pollName"> 
-           Pool Items <input type="text-box" ng-model="items"> 
-           <button ng-click="newPoll(pollName,items)">Add New Poll</button>    
-           <h1 class="hi">Hi!</h1>  
- 
-       </form>    
-       
-   </div>
-   <h3 class="voted">{{alertVoted}}</h3>
-            <div class="container" ng-repeat="poll in polls">
-               <form class="form-inline">
-                   <h3 class="poolTitle" id="poolTitle" class="header" ng-model="poll">{{ poll.title }}</h3> 
-                   <label for="text">I'm voting for:</label> 
-                         <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > 
-                              <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>   
-                         </select> 
-                  <button ng-click="vote(poll,selectedName,selectedName.item)">Vote</button>
-            <!--      <h1>Currently selected: {{poll.title}} Item: {{selectedName.item}} </h1>
-                  <h1>Currently selected: {{poll.title}}  {{string_API}} </h1>  -->
-                  
+<div class="container">
+   <label class="control-label" for="header_title"><h1 class="header">Poll List</h1></label>
+      <div class="container-fluid" ng-controller="mainController" >
+         
+         <div class="col-sm-9">                 
+             <form class="form-inline">
+                 
+                 Poll Title: <input type="text" ng-model="pollName"> 
+                 Pool Items <input type="text-box" ng-model="items"> 
+                 <button ng-click="newPoll(pollName,items)">Add New Poll</button>    
+   
+             </form> 
+             
+         </div>
+             
+          <div class="col-xs-8 col-sm-6">    
+             <div class="container" ng-repeat="poll in polls">
+                     <form class="form-inline">
+                         <h3 class="poolTitle" id="poolTitle" class="header" ng-model="poll">{{ poll.title }}</h3> 
+                            <label for="text">I'm voting for:</label> 
+                               <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > 
+                                    <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>   
+                               </select> 
+                               <button type="button" class="btn btn-success btn-xs" ng-click="vote(poll,selectedName,selectedName.item)">Vote</button>
+                               <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)">See Chart</button>
 
-                </form>    
-            </div>
+                  <!--      <h1>Currently selected: {{poll.title}} Item: {{selectedName.item}} </h1>
+                        <h1>Currently selected: {{poll.title}}  {{string_API}} </h1>  -->
+                        
       
+                      </form>    
+             </div>
+          </div>
+            
+         <div class="col-xs-4 col-sm-6 ">
+                <h3 class="voted">{{alertVoted}}</h3>
+                <div google-chart chart="chart" style="border:0px inset black;padding:0;width:400px">   </div>
+           </div>
+
+   </div>
+</div>
+<!--          
    <p>-------------------</p>
     
          
@@ -52,6 +63,8 @@
    </table>
     
 </div>
+    
+-->    
     
 </body>
 
