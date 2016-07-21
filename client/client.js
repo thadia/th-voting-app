@@ -8,17 +8,7 @@ myApp.controller('mainController', function($scope, $http) {
          
         $scope.polls = response.data;
         
-        google.charts.load('current');   // Don't need to specify chart libraries!
-   
-        function drawVisualization(dataTable,Title) {
-            var wrapper = new google.visualization.ChartWrapper({
-              chartType: 'PieChart',
-              dataTable: dataTable,
-              options: {'title': Title},
-              containerId: 'pie'
-            });
-            wrapper.draw();
-          }
+       
          
          
 
@@ -37,6 +27,24 @@ myApp.controller('mainController', function($scope, $http) {
          }
            
     });
+    
+    
+     google.charts.load('current');   // Don't need to specify chart libraries!
+   
+        function drawVisualization(dataTable,Title) {
+            var wrapper = new google.visualization.ChartWrapper({
+              chartType: 'PieChart',
+              dataTable: dataTable,
+              options: {'title': Title},
+              containerId: 'pie'
+            });
+            wrapper.draw();
+          }
+          
+          
+          
+          
+    
      
      $scope.getAll = function(){
           $http.get("/polls/all")
