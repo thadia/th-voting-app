@@ -24,7 +24,7 @@
             <div class="container" ng-repeat="poll in polls">
                <form class="form-inline">
                    <label class="control-label" for="poll_name"> <h3 class="poolTitle" id="poolTitle" class="header" ng-model="poll">{{ poll.title }}</h3></label>
-                   <button ng-click="drawChart(poll.title)">Draw</button>
+                   <button ng-click="drawChart(poll.title)">See Chart</button>
 
                 </form>
             </div>
@@ -35,7 +35,6 @@
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/gstatic/loader.js"></script>
     <script src="/client/client.js"></script>
     <script src="/bower_components/angular-google-chart/ng-google-chart.js"></script>
 
