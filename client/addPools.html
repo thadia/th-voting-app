@@ -12,6 +12,8 @@
 <body ng-app="myApp">
 <div class="container">
    <label class="control-label" for="header_title"><h1 class="header">Poll List</h1></label>
+   <label class="control-label" for="header_title"><h1 class="header">Hi {{username}}!</h1></label>
+
       <div class="container-fluid" ng-controller="mainController" >
          
          <div class="col-sm-9">                 
@@ -20,7 +22,8 @@
                  Poll Title <input type="text" ng-model="pollName"> 
                  Poll Items <input type="text-box" ng-model="items"> 
                  <button ng-click="newPoll(pollName,items)">Add New Poll</button>    
-  
+                
+                 
              </form> 
              
          </div>

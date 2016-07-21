@@ -7,6 +7,11 @@ myApp.controller('mainController', function($scope, $http) {
     .then(function (response) {
          $scope.polls = response.data;
     });
+    
+     $http.get("/username")
+    .then(function (response) {
+         $scope.username = response.data;
+    });
 
      $scope.getAll = function(){
           $http.get("/polls/all")
@@ -102,68 +107,6 @@ myApp.controller('mainController', function($scope, $http) {
 
 
 
-/*
-
-
-google.charts.load('current');   // Don't need to specify chart libraries!
-
-     $scope.drawChart = function(poll, itemName) {
-         
-        
-
-         $scope.selectedName.item = itemName;
-         $scope.poll = poll;
-
-         $scope.string_API = "/polls/viewChart/" + itemName;
-         console.log("LOG Show drawChart: "+ $scope.string_API);
-    
-         $http.get($scope.string_API)  //string 
-        .then(function (response) {
-            $scope.itemToDraw = response.data;
-            console.log("My Object to Draw "+$scope.itemToDraw  );
-        }); 
-    };
-        
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-      function drawVisualization(dataTable,Title) {
-            var wrapper = new google.visualization.ChartWrapper({
-              chartType: 'PieChart',
-              dataTable: dataTable,
-              options: {'title': Title},
-              containerId: 'pie'
-            });
-            wrapper.draw();
-          }
-          
-          
-        function drawVisualization()
-        
-     //   console.log( $scope.polls[1].title + "  MY Obj: ");
-     //   console.log( $scope.polls[1].list[0].item + "  MY Obj item: ");
-     //   console.log( $scope.polls[1].list[0].count + "  MY Obj count: ");
-         for(var i=0;i<$scope.polls.length;i++){
-                 $scope.dataTable = new google.visualization.DataTable();
-                 $scope.dataTable.addColumn('string', 'Items');
-                 $scope.dataTable.addColumn('number', 'Votes');
-             for(var j=0;j<$scope.polls[i].list.length;j++) {
-                 $scope.dataTable.addRow([$scope.polls[i].list[j].item, $scope.polls[i].list[j].count]);
-             }
-             console.log($scope.dataTable  + " MY CHART OBJ.");
-             google.charts.setOnLoadCallback(drawVisualization($scope.dataTable,$scope.polls[1].title));
-         }
-
-
-
-*/
  
    
  
