@@ -68,9 +68,10 @@ myApp.controller('mainController', function($scope, $http) {
                   
                    chart1.options = {
                        displayExactValues: true,
+                       border: 0,
                        width: 400,
                        height: 200,
-                       is3D: true,
+                       is3D: false,
                        chartArea: {left:10,top:10,bottom:0,height:"100%"}
                    };
                
