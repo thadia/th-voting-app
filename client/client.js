@@ -6,12 +6,16 @@ myApp.controller('mainController', function($scope, $http) {
      $http.get("/polls/all")
     .then(function (response) {
          $scope.polls = response.data;
+         $scope.getUsername();
     });
     
-     $http.get("/username")
-    .then(function (response) {
+     $scope.getUsername = function(){
+         $http.get("/username")
+            .then(function (response) {
          $scope.userdata = response.data;
-    });
+         });
+     } 
+     
 
      $scope.getAll = function(){
           $http.get("/polls/all")
