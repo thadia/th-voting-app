@@ -40,7 +40,7 @@
                                <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)">See Chart</button>
                                <button type="button" class="btn btn-default btn-xs" ng-show="isOwner(poll.owner,userdata.userid)">Edit</button>
                                <div class="container" ng-repeat="voter in poll.voters">
-                                    <button type="button" class="btn btn-success btn-xs" >{{voter}}  Here</button>
+                                    <button type="button" class="btn btn-success btn-xs" ng-hide="userdata.userid == voter">Vote 2</button>
                                 </div>
                   <!--      <h1>Currently selected: {{poll.title}} Item: {{selectedName.item}} </h1>
                         <h1>Currently selected: {{poll.title}}  {{string_API}} </h1>  -->
