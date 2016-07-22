@@ -16,7 +16,7 @@ myApp.controller('mainController', function($scope, $http) {
          });
      } 
      
-      $scope.hasVoted = function(itemName,voter){
+    /*  $scope.hasVoted = function(itemName,voter){
          $http.get("/voters/"+ itemName)
             .then(function (response) {
              console.log("Voters: "+ response.data);        
@@ -28,7 +28,7 @@ myApp.controller('mainController', function($scope, $http) {
              }
              return false;
          });
-     } 
+     } */
      
 
      $scope.getAll = function(){
@@ -41,7 +41,7 @@ myApp.controller('mainController', function($scope, $http) {
       $scope.isOwner = function(poll_owner,owner){
           if(poll_owner == owner && (typeof(owner) != "undefined"))
             return true;
-           { console.log(poll_owner + "=="+ owner );
+           { //console.log(poll_owner + "=="+ owner );
                return false;    
            }
      } 
