@@ -36,7 +36,7 @@
                                <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > 
                                     <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>   
                                </select> 
-                               <span  ng-repeat="voter in poll.voters">
+                               <span  ng-repeat="voter in poll.voters track by $index">
                                    <button type="button" class="btn btn-success btn-xs" ng-hide="userdata.userid == voter" ng-click="vote(poll,selectedName,selectedName.item)">Vote</button>
                                </span>
                                <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)">See Chart</button>
