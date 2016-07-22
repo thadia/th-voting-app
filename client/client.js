@@ -16,6 +16,14 @@ myApp.controller('mainController', function($scope, $http) {
          });
      } 
      
+      $scope.getVoters = function(itemName){
+         $http.get("/voters/"+ itemName)
+            .then(function (response) {
+         console.log("Voters: "+ response.data);        
+         $scope.voters = response.data;
+         });
+     } 
+     
 
      $scope.getAll = function(){
           $http.get("/polls/all")
