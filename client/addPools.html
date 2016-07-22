@@ -36,9 +36,8 @@
                                <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > 
                                     <th><option ng-options="type in poll.list" value="{{ type.item }}">{{ type.item }}</option>   
                                </select> 
-                               <span  ng-repeat="voter in poll.voters">
-                                   <button type="button" class="btn btn-success btn-xs" ng-if="userdata.userid != voter || poll.voters.length == 0" ng-click="vote(poll,selectedName,selectedName.item)">Vote</button>
-                               </span>
+
+                               <button type="button" class="btn btn-success btn-xs" ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1" ng-click="vote(poll,selectedName,selectedName.item)">Vote</button>       
                                <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)">See Chart</button>
                                <button type="button" class="btn btn-default btn-xs" ng-show="isOwner(poll.owner,userdata.userid)" ng-click="removePoll(poll.title)">Delete My Poll</button>
 
