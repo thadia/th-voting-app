@@ -39,7 +39,7 @@
                                <button type="button" class="btn btn-success btn-xs" ng-click="vote(poll,selectedName,selectedName.item)">Vote</button>
                                <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)">See Chart</button>
                                <button type="button" class="btn btn-default btn-xs" ng-show="isOwner(poll.owner,userdata.userid)">Edit</button>
-                               <h2>{{isOwner(poll.owner,userdata.username)}}</h2>
+                               <h2>{{isOwner(poll.owner,userdata.userid)}}</h2>
                   <!--      <h1>Currently selected: {{poll.title}} Item: {{selectedName.item}} </h1>
                         <h1>Currently selected: {{poll.title}}  {{string_API}} </h1>  -->
                         
