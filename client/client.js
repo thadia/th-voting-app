@@ -59,6 +59,7 @@ myApp.controller('mainController', function($scope, $http) {
         .then(function (response) {
              $scope.getAll();
              $scope.alertVoted = "You voted for: " + $scope.selectedName;
+             $window.location.href = '/home.html';
         }); 
     };
       
