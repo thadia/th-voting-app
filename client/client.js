@@ -24,10 +24,10 @@ myApp.controller('mainController', function($scope, $http) {
         });
      } 
      
-      $scope.isOwner = function(pollName,owner){
-          if(pollName.owner == owner && (typeof(owner) != "undefined"))
+      $scope.isOwner = function(poll_owner,owner){
+          if(poll_owner == owner && (typeof(owner) != "undefined"))
             return true;
-           { console.log(pollName.owner + "=="+ owner );
+           { console.log(poll_owner + "=="+ owner );
                return false;    
            }
      } 
