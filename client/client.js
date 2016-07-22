@@ -21,7 +21,7 @@ myApp.controller('mainController', function($scope, $http) {
             .then(function (response) {
              console.log("Voters: "+ response.data);        
              $scope.voters = response.data;
-             for(var i=0;i<voters.length;i++){
+             for(var i=0;i< $scope.voters.length;i++){
                  if($scope.voters[i] == voter){
                      return true;
                  }
