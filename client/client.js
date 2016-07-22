@@ -16,11 +16,17 @@ myApp.controller('mainController', function($scope, $http) {
          });
      } 
      
-      $scope.getVoters = function(itemName){
+      $scope.hasVoted = function(itemName,voter){
          $http.get("/voters/"+ itemName)
             .then(function (response) {
-         console.log("Voters: "+ response.data);        
-         $scope.voters = response.data;
+             console.log("Voters: "+ response.data);        
+             $scope.voters = response.data;
+             for(var i=0;i<voters.length;i++){
+                 if($scope.voters[i] == voter){
+                     return true;
+                 }
+             }
+             return false;
          });
      } 
      
