@@ -24,6 +24,12 @@ myApp.controller('mainController', function($scope, $http) {
         });
      } 
      
+      $scope.isOwner = function(pollName,owner){
+           if(pollName.owner == owner)
+            return true;
+           return false;    
+     } 
+     
      $scope.vote = function(poll, itemName, slectedItemObj) {
          //voting call here
          $scope.selectedName = slectedItemObj;
