@@ -79,6 +79,18 @@ myApp.controller('mainController', function($scope, $http) {
         }); 
     }; 
     
+    $scope.removePoll = function(pollName ) {
+         $scope.pollName = pollName;
+         $scope.string_API = "/polls/remove/'"+$scope.pollName ;
+         console.log("LOG New Poll: "+ $scope.string_API);
+         $http.get($scope.string_API)  
+        .then(function (response) {
+             $scope.getAll();
+             $scope.alertAddedPoll = "Your Poll was removed.";
+        }); 
+    }; 
+    
+    
 
        $scope.drawChart = function(itemName) {
 
