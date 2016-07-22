@@ -27,7 +27,9 @@ myApp.controller('mainController', function($scope, $http) {
       $scope.isOwner = function(pollName,owner){
           if(pollName.owner == owner && (typeof(owner) != "undefined"))
             return true;
-           return false;    
+           { console.log(pollName.owner + ""+ owner );
+               return false;    
+           }
      } 
      
      $scope.vote = function(poll, itemName, slectedItemObj) {
