@@ -1,5 +1,5 @@
 
-var myApp = angular.module('myApp',['googlechart']);
+var myApp = angular.module('myApp',['googlechart','ngRoute']);
 
 
 myApp.controller('mainController', function($scope, $http, $routeProvider) {
