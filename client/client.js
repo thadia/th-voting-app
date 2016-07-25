@@ -86,7 +86,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
          $http.get($scope.string_API)  
         .then(function (response) {
              $scope.getAll();
-             $scope.alertVoted = "Your New Poll was added.";
+             $scope.alertVoted = "Your New Poll: "+$scope.pollName+" was added.";
         });
         
          $scope.pollName = "";
@@ -100,7 +100,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
          $http.get($scope.string_API)  
         .then(function (response) {
              $scope.getAll();
-             $scope.alertAddedPoll = "Your Poll was removed.";
+             $scope.alertVoted = "Your Poll: "+$scope.pollName+" was removed.";
              $scope.pollName = "";
         }); 
     }; 
