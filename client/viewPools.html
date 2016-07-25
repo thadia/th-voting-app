@@ -14,7 +14,7 @@
 <div class="container">
    <div class="container-fluid" ng-controller="mainController" >
        <form class="form-inline">
-              <label class="control-label" for="header_title"><h1 class="header">Poll List</h1></label>
+              <label class="control-label" for="header_title"><h1 class="header_main">Poll List</h1></label>
                <a href="/auth/twitter"><img src="/client/signin.png"/></a>
        </form>     
       <br/><br/>
@@ -25,7 +25,7 @@
               <tbody>
                 <tr>
                   <td>{{ poll.title }}</td>
-                  <td style="width:30%" > <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
+                  <td style="width:30%" > <button type="button" class="btn btn-info btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
                 </tr>
                
               </tbody>

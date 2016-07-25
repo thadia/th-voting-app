@@ -10,3 +10,8 @@ body{
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
 }
+
+.header_main {
+  color:#1ab7ea;
+  font-weight: bold;
+}
