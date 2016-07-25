@@ -33,7 +33,7 @@
              <div class="container" ng-repeat="poll in polls">
                      <form class="form-inline">
                          <h3 class="poolTitle" id="poolTitle" class="header" ng-model="poll" ng-cloak>{{ poll.title }}</h3> 
-                            <label for="text">I'm voting for:</label> 
+                            <label for="text" ng-cloak>I'm voting for:</label> 
                                <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > 
                                     <th><option ng-options="type in poll.list" ng-cloak value="{{ type.item }}">{{ type.item }}</option>   
                                </select> 
