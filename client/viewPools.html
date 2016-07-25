@@ -19,13 +19,24 @@
        </form>     
       <br/><br/>
       <div class="col-sm-3">
-      
-               <div class="container" ng-repeat="poll in polls">
-                  <form class="form-inline">
-                      <label class="control-label" for="poll_name"> <h4 class="pollTitle" id="pollTitle" class="header" ng-model="poll" ng-cloak>{{ poll.title }}</h4></label>
+         
+         <table class="table" ng-repeat="poll in polls" ng-model="poll" ng-cloak>
+              
+              <tbody>
+                <tr>
+                  <td>{{ poll.title }}</td>
+                  <td style="width:30%" > <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
+                </tr>
+               
+              </tbody>
+            </table>
+
+ <!--           <div class="container" ng-repeat="poll in polls">
+               <form class="form-inline">
+                   <label class="control-label" for="poll_name"> <h4 class="pollTitle" id="pollTitle" class="header" ng-model="poll" ng-cloak>{{ poll.title }}</h4></label>
                       <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button>
                    </form>
-               </div>
+            </div> -->
        </div>
        
        
