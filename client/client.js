@@ -47,10 +47,9 @@ myApp.controller('mainController', function($scope, $http) {
      } 
      
      $scope.logout = function() {
-         // polls/post/:user/:title/:list
-         
         $http.get("/logout")
         .then(function (response) {
+             $scope.userdata = null;
              $scope.getAll();
              
         }); 
