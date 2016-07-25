@@ -2,7 +2,7 @@
 var myApp = angular.module('myApp',['googlechart']);
 
 
-myApp.controller('mainController', function($scope, $http, $route, $routeProvider) {
+myApp.controller('mainController', function($scope, $http, $routeProvider) {
      $http.get("/polls/all")
     .then(function (response) {
          $scope.polls = response.data;
