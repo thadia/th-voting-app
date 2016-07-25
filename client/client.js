@@ -46,6 +46,16 @@ myApp.controller('mainController', function($scope, $http) {
            }
      } 
      
+     $scope.logOut = function() {
+         // polls/post/:user/:title/:list
+         
+        $http.get("/logout")
+        .then(function (response) {
+             $scope.getAll();
+             
+        }); 
+    }; 
+     
      $scope.vote = function(poll, itemName, slectedItemObj) {
          //voting call here
          $scope.selectedName = slectedItemObj;
