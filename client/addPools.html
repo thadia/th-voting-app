@@ -34,7 +34,7 @@
                            <td style="width:40%" > <button type="button" class="btn btn-info btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
                       </tr>
                       
-                      <tr>
+                      <tr ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1">
                            <td>
                               <label for="text" ng-cloak>I'm voting for:</label> 
                               <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"> 

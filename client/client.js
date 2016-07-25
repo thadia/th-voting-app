@@ -86,7 +86,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
          $http.get($scope.string_API)  
         .then(function (response) {
              $scope.getAll();
-             $scope.alertAddedPoll = "Your New Poll was added.";
+             $scope.alertVoted = "Your New Poll was added.";
         });
         
          $scope.pollName = "";
