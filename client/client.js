@@ -87,7 +87,10 @@ myApp.controller('mainController', function($scope, $http, $window) {
         .then(function (response) {
              $scope.getAll();
              $scope.alertAddedPoll = "Your New Poll was added.";
-        }); 
+        });
+        
+         $scope.pollName = "";
+         $scope.items = "";
     }; 
     
     $scope.removePoll = function(pollName ) {
