@@ -12,7 +12,9 @@ myApp.controller('mainController', function($scope, $http) {
      $scope.getUsername = function(){
          $http.get("/username")
             .then(function (response) {
+         if(response)      
          $scope.userdata = response.data;
+         else $scope.userdata=null;
          });
      } 
      
