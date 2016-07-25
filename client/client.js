@@ -1,8 +1,8 @@
 
-var myApp = angular.module('myApp',['googlechart','ngRoute']);
+var myApp = angular.module('myApp',['googlechart']);
 
 
-myApp.controller('mainController', function($scope, $http, $routeProvider) {
+myApp.controller('mainController', function($scope, $http) {
      $http.get("/polls/all")
     .then(function (response) {
          $scope.polls = response.data;
@@ -53,9 +53,7 @@ myApp.controller('mainController', function($scope, $http, $routeProvider) {
         .then(function (response) {
              $scope.userdata = null;
              $scope.getAll();
-             $route.reload();
-
-
+             $window.location.href = '/home.html';
         }); 
     }; 
      
