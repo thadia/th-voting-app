@@ -130,7 +130,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
                        width: 800,
                        height: 600,
                        is3D: false,
-                       chartArea: {left:10,top:10,bottom:0,height:"100%"}
+                       chartArea: {left:20,top:0,bottom:0,height:"100%"}
                    };
                
                    chart1.formatters = {
