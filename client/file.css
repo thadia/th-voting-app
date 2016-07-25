@@ -1,5 +1,5 @@
 body{
-   font-family: "Lucida Console";
+   font-family: fantasy;
 }
 
 /* 
@@ -14,4 +14,24 @@ body{
 .header_main {
   color:#1ab7ea;
   font-weight: bold;
+}
+
+
+.cell_title {
+  font-weight: bold;
+  color:#d9534f;
+  
+}
+
+.add-poll{
+  font-weight: bold;
+  color:#269826;
+  font-family: fantasy;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  border: 1px solid;
+  border-color: #269826;
+  border-radius: 5px;
+
 }

@@ -17,7 +17,7 @@
       <div class="container-fluid" >
          
          <div class="col-sm-9">                 
-             <form class="form-group">
+             <form class="form-group add-poll">
                  Poll Title <input type="text" ng-model="pollName"> 
                  Poll Items <input type="text-box" ng-model="items" data-toggle="tooltip" data-placement="left" title="Separated by comma"> 
                  <button type="button" class="btn btn-success btn-xs" ng-cloak ng-click="newPoll(pollName,items)">Add New Poll</button>    
@@ -30,7 +30,7 @@
              <table class="table table-hover" ng-repeat="poll in polls" ng-model="poll" ng-cloak>
               <tbody>
                       <tr>
-                           <td>{{ poll.title }}</td>
+                           <td class="cell_title">{{ poll.title }}</td>
                            <td style="width:40%" > <button type="button" class="btn btn-info btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
                       </tr>
                       
@@ -48,7 +48,7 @@
                       
                       
                       <tr>
-                           <td > <button type="button" class="btn btn-danger btn-xs" ng-show="isOwner(poll.owner,userdata.userid)" ng-dblclick="removePoll(poll.title)" data-toggle="tooltip" data-placement="left"
+                           <td colspan="2" > <button type="button" class="btn btn-danger btn-xs" ng-show="isOwner(poll.owner,userdata.userid)" ng-dblclick="removePoll(poll.title)" data-toggle="tooltip" data-placement="left"
                            title="Double Click To Delete" ng-cloak>Delete My Poll</button></td>
                       </tr>
                  </tbody>
@@ -79,8 +79,8 @@
           
       -->    
             
-         <div class="col-xs-4 col-sm-6 ">
-               <div class="alert alert-success" role="alert" ng-cloak>
+         <div class="col-xs-4 col-sm-6">
+               <div class="alert alert-success" role="alert" ng-cloak ng-show="alertVoted">
                        {{alertVoted}}
                </div>
                <div google-chart chart="chart" style="border:0px inset black;padding:0;width:400px">   </div>
