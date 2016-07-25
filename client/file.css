@@ -20,7 +20,7 @@ body{
 .cell_title {
   font-weight: bold;
   color:#d9534f;
-  
+  white-space: normal;
 }
 
 .add-poll{
@@ -33,5 +33,12 @@ body{
   border: 1px solid;
   border-color: #269826;
   border-radius: 5px;
+  white-space: normal;
+  width: inherit;
 
 }
+
+td, tr{
+  white-space: normal;
+}
+  

@@ -9,14 +9,15 @@
 </head>
 
 <body ng-app="myApp">
-<div class="container" ng-controller="mainController" >
+<div class="container container-fluid" ng-controller="mainController" >
     <br/>
+  <div class="title_header"    
    <label class="control-label" for="header_title"><h1 class="header_main">Poll List</h1></label>
    <button type="button" class="btn btn-info btn-xs" ng-hide="userdata.username == undefined" ng-click="logout()" ng-cloak>Logout: {{userdata.username}}</button>
+  </div>
    <br/>
-      <div class="container-fluid" >
-         
-         <div class="col-sm-9">                 
+          
+         <div class="col-sm-12">                 
              <form class="form-group add-poll">
                  Poll Title <input type="text" ng-model="pollName"> 
                  Poll Items <input type="text-box" ng-model="items" data-toggle="tooltip" data-placement="left" title="Separated by comma"> 
@@ -31,7 +32,7 @@
               <tbody>
                       <tr>
                            <td class="cell_title">{{ poll.title }}</td>
-                           <td style="width:40%" > <button type="button" class="btn btn-info btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
+                           <td style="width:10%" > <button type="button" class="btn btn-info btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
                       </tr>
                       
                       <tr ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1">
@@ -41,7 +42,7 @@
                                     <option ng-options="type in poll.list" ng-cloak value="{{ type.item }}">{{ type.item }}</option>   
                               </select> 
                            </td>
-                           <td style="width:30%">
+                           <td style="width:10%">
                               <button type="button" class="btn btn-success btn-xs" ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1" ng-click="vote(poll,selectedName,selectedName.item)" ng-cloak>Vote</button>       
                            </td> 
                       </tr>
@@ -55,54 +56,15 @@
                </table>
              
          </div>   
-             
-    <!--         
-             
-                 
-             <div class="container" ng-repeat="poll in polls">
-                     <form class="form-inline">
-                         <h3 class="poolTitle" id="poolTitle" class="header" ng-model="poll" ng-cloak>{{ poll.title }}</h3> 
-                         
-                            <label for="text" ng-cloak>I'm voting for:</label> 
-                               <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"  > 
-                                    <th><option ng-options="type in poll.list" ng-cloak value="{{ type.item }}">{{ type.item }}</option>   
-                               </select> 
-
-                               <button type="button" class="btn btn-success btn-xs" ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1" ng-click="vote(poll,selectedName,selectedName.item)" ng-cloak>Vote</button>       
-                               <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button>
-                               <button type="button" class="btn btn-danger btn-xs" ng-show="isOwner(poll.owner,userdata.userid)" ng-dblclick="removePoll(poll.title)" data-toggle="tooltip" data-placement="left"
-        title="Double Click To Delete" ng-cloak>Delete My Poll</button>
-
-                      </form>    
-             </div>
-          </div>
-          
-      -->    
             
          <div class="col-xs-4 col-sm-6">
                <div class="alert alert-success" role="alert" ng-cloak ng-show="alertVoted">
                        {{alertVoted}}
                </div>
-               <div google-chart chart="chart" style="border:0px inset black;padding:0;width:400px">   </div>
+               <div google-chart chart="chart" style="border:0px inset black;padding:0;width:300px">   </div>
          </div>
 
    </div>
-</div>
-
-<!--          
-   <p>-------------------</p>
-    
-         
-    <table>
-     <tr ng-repeat="poll in polls">
-          <th>{{ poll  }}</th>
-          
-     </tr>
-   </table>
-    
-</div>
-    
--->    
     
 </body>
 

@@ -127,8 +127,8 @@ myApp.controller('mainController', function($scope, $http, $window) {
                    chart1.options = {
                        displayExactValues: true,
                        border: 0,
-                       width: 800,
-                       height: 300,
+                       width: 600,
+                       height: 400,
                        is3D: false,
                        chartArea: {left:20,top:40,bottom:0,height:"100%"}
                    };
@@ -136,7 +136,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
                    chart1.formatters = {
                      number : [{
                        columnNum: 1,
-                       pattern: "$ #,##0.00"
+                       pattern: "#,##0.00"
                      }]
                    };
                
