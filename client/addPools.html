@@ -13,7 +13,7 @@
 <div class="container" ng-controller="mainController" >
     <br/>
    <label class="control-label" for="header_title"><h1 class="header">Poll List</h1></label>
-   <button type="button" class="btn btn-default btn-xs" ng-hide="userdata.username == undefined" ng-click="logout()" ng-cloak>Logout: {{userdata.username}}</button>
+   <button type="button" class="btn btn-info btn-xs" ng-hide="userdata.username == undefined" ng-click="logout()" ng-cloak>Logout: {{userdata.username}}</button>
    <br/>
       <div class="container-fluid" >
          
@@ -22,7 +22,7 @@
                   
                  Poll Title <input type="text" ng-model="pollName"> 
                  Poll Items <input type="text-box" ng-model="items" data-toggle="tooltip" data-placement="left" title="Separated by comma"> 
-                 <button ng-cloak ng-click="newPoll(pollName,items)">Add New Poll</button>    
+                 <button type="button" class="btn btn-success btn-xs" ng-cloak ng-click="newPoll(pollName,items)">Add New Poll</button>    
                 
                  
              </form> 
@@ -40,7 +40,7 @@
 
                                <button type="button" class="btn btn-success btn-xs" ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1" ng-click="vote(poll,selectedName,selectedName.item)" ng-cloak>Vote</button>       
                                <button type="button" class="btn btn-default btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button>
-                               <button type="button" class="btn btn-default btn-xs" ng-show="isOwner(poll.owner,userdata.userid)" ng-dblclick="removePoll(poll.title)" data-toggle="tooltip" data-placement="left"
+                               <button type="button" class="btn btn-danger btn-xs" ng-show="isOwner(poll.owner,userdata.userid)" ng-dblclick="removePoll(poll.title)" data-toggle="tooltip" data-placement="left"
         title="Double Click To Delete" ng-cloak>Delete My Poll</button>
 
                       </form>    
