@@ -53,7 +53,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
         .then(function (response) {
              $scope.userdata = null;
              $scope.getAll();
-             $window.location.href = '/home.html';
+             $window.location.href = '/home';
         }); 
     }; 
      
