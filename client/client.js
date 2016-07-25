@@ -46,7 +46,7 @@ myApp.controller('mainController', function($scope, $http) {
            }
      } 
      
-     $scope.logOut = function() {
+     $scope.logout = function() {
          // polls/post/:user/:title/:list
          
         $http.get("/logout")
