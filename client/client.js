@@ -101,6 +101,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
         .then(function (response) {
              $scope.getAll();
              $scope.alertAddedPoll = "Your Poll was removed.";
+             $scope.pollName = "";
         }); 
     }; 
     
