@@ -53,7 +53,8 @@ myApp.controller('mainController', function($scope, $http) {
         .then(function (response) {
              $scope.userdata = null;
              $scope.getAll();
-             $window.location.href = '/';
+             $route.reload();
+
 
         }); 
     }; 
