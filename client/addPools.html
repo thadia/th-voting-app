@@ -47,8 +47,8 @@
                       </tr>
                       
                       
-                      <tr>
-                           <td colspan="2" > <button type="button" class="btn btn-danger btn-xs" ng-show="isOwner(poll.owner,userdata.userid)" ng-dblclick="removePoll(poll.title)" data-toggle="tooltip" data-placement="left"
+                      <tr ng-show="isOwner(poll.owner,userdata.userid)" >
+                           <td colspan="2" > <button type="button" class="btn btn-danger btn-xs" ng-dblclick="removePoll(poll.title)" data-toggle="tooltip" data-placement="left"
                            title="Double Click To Delete" ng-cloak>Delete My Poll</button></td>
                       </tr>
                  </tbody>
