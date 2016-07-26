@@ -26,10 +26,19 @@
                 <tr>
                   <td>{{ poll.title }}</td>
                   <td style="width:30%" > <button type="button" class="btn btn-info btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
-                  <td style="width:10%">
-                     <button type="button" class="btn btn-success btn-xs" ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1" ng-click="vote(poll,selectedName,selectedName.item)" ng-cloak>Vote</button>       
-                  </td> 
                 </tr>
+                
+                <tr ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1">
+                           <td>
+                              <label for="text" ng-cloak>I'm voting for:</label> 
+                              <select ng-model="selectedName" ng-options="type as type.item for type in poll.list" ng-init="selectedName = poll.list[0]"> 
+                                    <option ng-options="type in poll.list" ng-cloak value="{{ type.item }}">{{ type.item }}</option>   
+                              </select> 
+                           </td>
+                           <td style="width:10%">
+                              <button type="button" class="btn btn-success btn-xs" ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1" ng-click="vote(poll,selectedName,selectedName.item)" ng-cloak>Vote</button>       
+                           </td> 
+                 </tr>
                
               </tbody>
             </table>
