@@ -26,7 +26,7 @@
          </div>
              
          
-         <div class="col-xs-8 col-sm-6">
+         <div class="col-xs-6 col-md-4">
              <table class="table table-hover" ng-repeat="poll in polls" ng-model="poll" ng-cloak>
               <tbody>
                       <tr>
@@ -56,11 +56,11 @@
              
          </div>   
             
-         <div class="col-xs-4 col-sm-6">
+         <div class="col-xs-12 col-sm-6 col-md-8">
                <div class="alert alert-success" role="alert" ng-cloak ng-show="alertVoted">
                        {{alertVoted}}
                </div>
-               <div google-chart chart="chart" style="border:0px inset black;padding:0;width:300px">   </div>
+               <div google-chart chart="chart" style="border:0px inset black;padding:2px;width:600px">   </div>
          </div>
          
          
