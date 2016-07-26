@@ -26,6 +26,9 @@
                 <tr>
                   <td>{{ poll.title }}</td>
                   <td style="width:30%" > <button type="button" class="btn btn-info btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
+                  <td style="width:10%">
+                     <button type="button" class="btn btn-success btn-xs" ng-hide="poll.voters.lastIndexOf(userdata.userid) != -1" ng-click="vote(poll,selectedName,selectedName.item)" ng-cloak>Vote</button>       
+                  </td> 
                 </tr>
                
               </tbody>

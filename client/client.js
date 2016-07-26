@@ -7,6 +7,8 @@ myApp.controller('mainController', function($scope, $http, $window) {
     .then(function (response) {
          $scope.polls = response.data;
          $scope.getUsername();
+         $scope.getmyip();
+         
     });
     
      $scope.getUsername = function(){
@@ -14,7 +16,16 @@ myApp.controller('mainController', function($scope, $http, $window) {
             .then(function (response) {
          if(response)      
          $scope.userdata = response.data;
-         else $scope.userdata=null;
+         else $scope.userdata.userid= $scope.myip;
+         });
+     } 
+     
+     $scope.getmyip = function(){
+         $http.get("/myip")
+            .then(function (response) {
+         if(response)      
+         $scope.myip = response.data;
+         else $scope.myip=null;
          });
      } 
      
