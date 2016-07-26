@@ -8,15 +8,19 @@ myApp.controller('mainController', function($scope, $http, $window) {
          $scope.polls = response.data;
          $scope.getUsername();
          $scope.getmyip();
+
          
     });
     
      $scope.getUsername = function(){
          $http.get("/username")
             .then(function (response) {
-         if(response)      
+         if(response.data)      
          $scope.userdata = response.data;
-         else $scope.userdata.userid= $scope.myip;
+         else { 
+             $scope.getmyip();
+             console.log("IP " + $scope.myip);
+            }
          });
      } 
      
@@ -84,6 +88,26 @@ myApp.controller('mainController', function($scope, $http, $window) {
              //$window.location.href = '/home';
         }); 
     };
+    
+    
+    $scope.voteIp = function(poll, itemName, slectedItemObj,ip) {
+         //voting call here
+         $scope.selectedName = slectedItemObj;
+         $scope.selectedName.item = itemName;
+         $scope.poll = poll;
+         $scope.poll.ip = ip;
+        // $scope.user = "guest";
+         $scope.string_API = "/polls/vote/" +$scope.poll.ip+"/" +$scope.poll.title+"/" +$scope.selectedName;
+         console.log("LOG Voting: "+ $scope.string_API);
+    
+         $http.get($scope.string_API)  //string 
+        .then(function (response) {
+             $scope.getAll();
+             $scope.alertVoted = "You voted for: " + $scope.selectedName;
+             //$window.location.href = '/home';
+        }); 
+    };
+    
       
    //  $scope.newPoll = function(owner, pollName, items ) {
      $scope.newPoll = function(pollName, items ) {
