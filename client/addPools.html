@@ -31,7 +31,7 @@
              <table class="table table-hover" ng-repeat="poll in polls" ng-model="poll" ng-cloak>
               <tbody>
                       <tr>
-                           <td class="cell_title">{{ poll.title }}</td>
+                           <td class="cell_title" ng-cloak>{{ poll.title }}</td>
                            <td style="width:10%" > <button type="button" class="btn btn-info btn-xs" ng-click="drawChart(poll.title)" ng-cloak>See Chart</button></td> 
                       </tr>
                       
