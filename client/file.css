@@ -61,7 +61,7 @@ td, tr{
 }
   
 .h-scroll {
-    height: 100vh; /* %-height of the viewport */
+    height: 85vh; /* %-height of the viewport */
      
     overflow-y: scroll;
 }
