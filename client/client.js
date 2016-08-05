@@ -193,7 +193,13 @@ myApp.controller('mainController', function($scope, $http, $window) {
 }); 
 
 
-
+$('#myNav').affix({
+   offset: {
+      top: 100, bottom: function () {
+         return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+   }
+})
 
 
  

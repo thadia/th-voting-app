@@ -60,3 +60,8 @@ td, tr{
   white-space: normal;
 }
   
+.h-scroll {
+    height: 100vh; /* %-height of the viewport */
+     
+    overflow-y: scroll;
+}
